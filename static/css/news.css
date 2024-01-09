@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    flex: 1 0 calc(25% - 20px); /* 25% width for each card, minus margin */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+    max-width: 300px;  /* Максимальная ширина изображения */
+}
+
+.card-content {
+    padding: 10px;
+    flex: 1;
+}
+
+p {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 17px/normal Tahoma, Geneva, sans-serif;
+  color: rgba(0,0,0,0.9);
+  text-align: justify;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+}

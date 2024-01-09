@@ -1,0 +1,38 @@
+.animated-menu {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+
+}
+
+nav {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+a:hover,
+a:active {
+  border-bottom: 2px solid #3498db; /* Цвет подчеркивания при наведении и нажатии */
+  color: #3498db; /* Изменение цвета текста при наведении и нажатии */
+}
