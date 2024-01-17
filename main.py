@@ -10,7 +10,6 @@ app.config['SECRET_KEY'] = 'mysecretkey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
