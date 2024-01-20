@@ -1,7 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+
+.post-img {
+  width: 100%; /* Set a fixed width (adjust as needed) */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 h1 {
     color: #333;

@@ -4,26 +4,15 @@ body.animatedtext {
     margin: 0px;
 }
 
-#container {
-    background: #646464;
-    position: absolute;
-    margin: auto;
-    width: 100vw;
-    height: 20pt;
-    top: 0;
-    bottom: 0;
-
-    filter: url(#threshold) blur(0.4px);
-}
-
 #text1,
 #text2 {
     position: absolute;
     width: 100%;
     display: inline-block;
-    font-family: "Helvetica", sans-serif;
-    color: white;
+    font-family: "Raleway", sans-serif;
+    color: black;
     font-size: 14pt;
     text-align: center;
     user-select: none;
+    top: 180px;
 }
