@@ -261,3 +261,57 @@
 
 
 
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@mixin center(){
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+    left:50%;
+    top:50%;
+}
+
+
+maintext.body{
+  background: -webkit-linear-gradient(rgb(235, 236, 231), rgb(255, 255, 255));
+  background: linear-gradient(rgb(235, 236, 231), rgb(255, 255, 255));
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+
+}
+.maintext{
+  position:top;
+  @include center();
+}
+.title{
+  font-weight: 800;
+  color: transparent;
+  font-size:120px;
+  background: url("https://oir.mobi/uploads/posts/2021-03/thumbs/1616587133_12-p-programmirovanie-fon-17.jpg") repeat;
+  background: url("https://fonoteka.top/uploads/posts/2021-06/1624495939_5-phonoteka_org-p-oboi-na-rabochii-stol-programmirovanie-kra-5.jpg") repeat;
+  background-position: 40% 50%;
+  -webkit-background-clip: text;
+  position:relative;
+  text-align:center;
+  line-height: 100px;
+  letter-spacing: -8px;
+}
+.subtitle{
+  font-size: 30pt;
+  display: block;
+  text-align: center;
+}
+
+.headers {
+    width: 100%;
+    font-family: "Arial", sans-serif;
+    font-size: 30pt;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+
+

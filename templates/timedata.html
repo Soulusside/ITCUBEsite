@@ -10,74 +10,72 @@
 
 </head>
 <body>
-
-<nav id="navbar">
-  <ul class="navbar-items flexbox-col">
-    <li class="navbar-logo flexbox-left">
-      <a class="navbar-item-inner flexbox">
-        <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="MDN" width="70">
-      </a>
-    </li>
-    <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left">
-        <div class="navbar-item-inner-icon-wrapper flexbox">
-          <ion-icon name="home-outline"></ion-icon>
-        </div>
-        <span class="link-text">Главная</span>
-      </a>
-    </li>
-    <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left">
-        <div class="navbar-item-inner-icon-wrapper flexbox">
-          <ion-icon name="grid-outline"></ion-icon>
-        </div>
-        <span class="link-text">О центре</span>
-      </a>
-    </li>
-        <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="news">
-        <div class="navbar-item-inner-icon-wrapper flexbox">
-          <ion-icon name="newspaper-outline"></ion-icon>
-        </div>
-        <span class="link-text">Новости </span>
-      </a>
-    </li>
-    </li>
-        <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="timedata">
-        <div class="navbar-item-inner-icon-wrapper flexbox" >
-          <ion-icon name="school-outline"></ion-icon>
-        </div>
-        <span class="link-text" href="https://developer.mozilla.org/ru/" >Расписание</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+    <nav id="navbar">
+        <ul class="navbar-items flexbox-col">
+            <li class="navbar-logo flexbox-left">
+                <a class="navbar-item-inner flexbox">
+                    <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="MDN" width="70">
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+                    <span class="link-text">Главная</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="grid-outline"></ion-icon>
+                    </div>
+                    <span class="link-text">О центре</span>
+                </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="news">
+                    <div class="navbar-item-inner-icon-wrapper flexbox">
+                        <ion-icon name="newspaper-outline"></ion-icon>
+                    </div>
+                    <span class="link-text">Новости </span>
+                </a>
+            </li>
+            </li>
+            <li class="navbar-item flexbox-left">
+                <a class="navbar-item-inner flexbox-left" href="timedata">
+                    <div class="navbar-item-inner-icon-wrapper flexbox" >
+                        <ion-icon name="school-outline"></ion-icon>
+                    </div>
+                    <span class="link-text" href="https://developer.mozilla.org/ru/" >Расписание</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <div class="bg-body-tertiary p-5 rounded">
         {% for name, schedule in schedules.items() %}
-            <h3 style="text-align: center;">{{ name }}</h3>
-            <table>
-                <tr>
-                    <th>Время</th>
-                    <th>ПН</th>
-                    <th>ВТ</th>
-                    <th>СР</th>
-                    <th>ЧТ</th>
-                    <th>ПТ</th>
-                    <th>СБ</th>
-                </tr>
-                {% for entry in schedule %}
-                    <tr>
-                        {% for item in entry %}
-                            <td>{{ item }}</td>
-                        {% endfor %}
-                    </tr>
+        <h3 style="text-align: center;">{{ name }}</h3>
+        <table>
+            <tr>
+                <th>Время</th>
+                <th>ПН</th>
+                <th>ВТ</th>
+                <th>СР</th>
+                <th>ЧТ</th>
+                <th>ПТ</th>
+                <th>СБ</th>
+            </tr>
+            {% for entry in schedule %}
+            <tr>
+                {% for item in entry %}
+                <td>{{ item }}</td>
                 {% endfor %}
-            </table>
+            </tr>
+            {% endfor %}
+        </table>
         {% endfor %}
     </div>
-
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
 

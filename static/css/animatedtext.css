@@ -1,18 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
-
-body.animatedtext {
-    margin: 0px;
-}
 
 #text1,
 #text2 {
-    position: absolute;
     width: 100%;
     display: inline-block;
     font-family: "Raleway", sans-serif;
     color: black;
     font-size: 14pt;
     text-align: center;
-    user-select: none;
     top: 180px;
 }
