@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/maintext.css') }}">
@@ -22,7 +22,7 @@
       </a>
     </li>
     <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left">
+      <a class="navbar-item-inner flexbox-left" href="{{ url_for('index') }}">
         <div class="navbar-item-inner-icon-wrapper flexbox">
           <ion-icon name="home-outline"></ion-icon>
         </div>
@@ -37,21 +37,20 @@
         <span class="link-text">О центре</span>
       </a>
     </li>
-        <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="news">
+    <li class="navbar-item flexbox-left">
+      <a class="navbar-item-inner flexbox-left" href="{{ url_for('news') }}">
         <div class="navbar-item-inner-icon-wrapper flexbox">
           <ion-icon name="newspaper-outline"></ion-icon>
         </div>
-        <span class="link-text">Новости </span>
+        <span class="link-text">Новости</span>
       </a>
     </li>
-    </li>
-        <li class="navbar-item flexbox-left">
-      <a class="navbar-item-inner flexbox-left" href="timedata">
-        <div class="navbar-item-inner-icon-wrapper flexbox" >
+    <li class="navbar-item flexbox-left">
+      <a class="navbar-item-inner flexbox-left" href="{{ url_for('timedata') }}">
+        <div class="navbar-item-inner-icon-wrapper flexbox">
           <ion-icon name="school-outline"></ion-icon>
         </div>
-        <span class="link-text" href="https://developer.mozilla.org/ru/" >Расписание</span>
+        <span class="link-text">Расписание</span>
       </a>
     </li>
   </ul>
@@ -60,25 +59,25 @@
 <div class="container">
     <div class="bg-body-tertiary p-5 rounded">
         <div class="maintext">
-        <div class="subtitle"> ЦЕНТР ЦИФРОВОГО ОБРАЗОВАНИЯ ДЕТЕЙ </div>
-        <div class="title">IT-КУБ.НЮРБА</div>
-      <script>
-        $(document).ready(function(){
-          var mouseX, mouseY;
-          var ww = $( window ).width();
-          var wh = $( window ).height();
-          var traX, traY;
-          $(document).mousemove(function(e){
-            mouseX = e.pageX;
-            mouseY = e.pageY;
-            traX = ((4 * mouseX) / 570) + 40;
-            traY = ((4 * mouseY) / 570) + 50;
-            console.log(traX);
-            $(".title").css({"background-position": traX + "%" + traY + "%"});
-          });
-        });
-      </script>
-      </div>
+            <div class="subtitle">ЦЕНТР ЦИФРОВОГО ОБРАЗОВАНИЯ ДЕТЕЙ</div>
+            <div class="title">IT-КУБ.НЮРБА</div>
+            <script>
+                $(document).ready(function(){
+                    var mouseX, mouseY;
+                    var ww = $( window ).width();
+                    var wh = $( window ).height();
+                    var traX, traY;
+                    $(document).mousemove(function(e){
+                        mouseX = e.pageX;
+                        mouseY = e.pageY;
+                        traX = ((4 * mouseX) / 570) + 40;
+                        traY = ((4 * mouseY) / 570) + 50;
+                        console.log(traX);
+                        $(".title").css({"background-position": traX + "%" + traY + "%"});
+                    });
+                });
+            </script>
+        </div>
         <div class="headers"><span style="color:purple;">print</span>(<span style="color:green">"Новости"</span>)</div>
 
         {% for post in posts %}
@@ -87,32 +86,39 @@
                 <div class="slider autoplay">
                     {% for photo_url in post.photos %}
                         <div class="post">
-                            <img class="post-img" src="{{ photo_url }}" style="width: auto; height: 400px; ">
+                            <img class="post-img" src="{{ photo_url }}" style="width: auto; height: 400px;">
                         </div>
                     {% endfor %}
                 </div>
-                <p>{{ post.text }}</p>
-            <div class="line"></div>
             {% endif %}
+            <p>{{ post.text }}</p>
+            {% if post.videos %}
+                <div class="videos">
+                    {% for video_url in post.videos %}
+                        <iframe src="https://vk.com/video_ext.php?oid={{ video_url.split('_')[0] }}&id={{ video_url.split('_')[1] }}" width="640" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="line"></div>
         </div>
         {% endfor %}
     </div>
     <script>
         $(document).ready(function(){
             $(".autoplay").slick({
-              dots: true,
-              infinite: true,
-              speed: 500,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              autoplay: true,
-              autoplaySpeed: 2000,
-              adaptiveHeight: true
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                adaptiveHeight: true
             });
         });
     </script>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </div>
 </body>
 </html>

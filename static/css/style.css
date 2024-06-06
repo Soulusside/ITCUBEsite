@@ -1,3 +1,23 @@
+.main {
+    display: grid;
+    gap: 20px;
+    height: 100vh;
+    grid-template-areas:
+        "header   header   header"
+        "sidebar   content   content"
+        "sidebar   content   content";
+}
+
+.header {
+  grid-area: header;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.content {
+  grid-area: content;
+}
+
 
 .post-img {
   width: 100%; /* Set a fixed width (adjust as needed) */
@@ -6,7 +26,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 
 :root {
     --primary: 0, 0%, 100%;
@@ -85,10 +104,6 @@
     align-items: center;
 }
 
-
-/* ========
-    Navbar
-   ======== */
 
 #navbar {
     top: 0;
